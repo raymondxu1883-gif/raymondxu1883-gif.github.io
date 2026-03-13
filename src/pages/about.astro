@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
+const pageTitle = "About SignSmith Studio | Helping Small Businesses Shine";
+const pageDescription = "We believe every small business deserves great signage. No design experience needed — we guide you from idea to finished product.";
+
 const stats = [
   { number: '500+', label: 'Projects Completed' },
   { number: '98%', label: 'Client Satisfaction' },
@@ -35,8 +38,8 @@ const values = [
 ---
 
 <Layout 
-  title="About Us"
-  description="Learn about Lumina Design Studio. With 8+ years of experience in design and international trade, we deliver quality signage and print solutions worldwide."
+  title={pageTitle}
+  description={pageDescription}
 >
   <Navigation />
   

@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
+const pageTitle = "SignSmith Portfolio | Small Business Sign Projects";
+const pageDescription = "See how we've helped small shops, local businesses, and individuals create professional signs. No project too small!";
+
 const categories = ['All', 'Signage', 'Banners', 'Stickers', 'Events', 'Branding', 'Print'];
 
 const portfolioItems = [
@@ -73,8 +76,8 @@ const portfolioItems = [
 ---
 
 <Layout 
-  title="Portfolio"
-  description="Browse our portfolio of custom signage, banners, stickers, and print design projects for businesses and events."
+  title={pageTitle}
+  description={pageDescription}
 >
   <Navigation />
   

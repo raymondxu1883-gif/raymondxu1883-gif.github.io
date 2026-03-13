@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
+const pageTitle = "SignSmith Services | Easy & Affordable Sign Design";
+const pageDescription = "Professional sign design and production for small businesses. No design experience needed — we guide you from concept to finished product.";
+
 const services = [
   {
     id: 'signage',
@@ -139,8 +142,8 @@ const processSteps = [
 ---
 
 <Layout 
-  title="Services"
-  description="Explore our range of design services: custom signage, banners, stickers, event signage, print design, and brand identity packages."
+  title={pageTitle}
+  description={pageDescription}
 >
   <Navigation />
   

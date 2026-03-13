@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
+const pageTitle = "SignSmith Studio | Professional Signs for Small Businesses";
+const pageDescription = "We help small shops, local businesses, and individuals get professional signs — easily, affordably, and with a personal touch. No design experience needed!";
+
 const services = [
   {
     icon: 'signage',
@@ -89,8 +92,8 @@ const testimonials = [
 ---
 
 <Layout 
-  title="Custom Signage & Print Design Services"
-  description="Professional signage and print design services for businesses and events. Custom acrylic signs, banners, stickers, wedding signage, and more."
+  title={pageTitle}
+  description={pageDescription}
 >
   <Navigation />
   
@@ -99,14 +102,15 @@ const testimonials = [
     <section class="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-br from-gray-50 to-white">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto text-center">
+          <p class="text-orange-500 font-semibold text-sm uppercase tracking-wider mb-4">We Make the Mark</p>
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Custom <span class="text-orange-500">Signage</span> & Print Design That Makes an <span class="text-orange-500">Impact</span>
+            Professional Signs for <span class="text-orange-500">Small Shops</span> & <span class="text-orange-500">Local Businesses</span>
           </h1>
           <p class="text-lg md:text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
-            Professional design services for businesses, events, and personal projects. From acrylic signs to wedding welcomes—we bring your vision to life.
+            No design experience? No problem. We help small businesses get great signage — easily, affordably, and with a smile.
           </p>
-          <p class="text-orange-500 font-semibold mb-8">
-            ✨ Design + Production — We handle everything from concept to finished product
+          <p class="text-gray-500 text-base mb-8">
+            ✨ From concept to finished product — we guide you every step of the way
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="./portfolio.html" class="btn btn-primary text-lg px-8">

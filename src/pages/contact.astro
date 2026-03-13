@@ -3,12 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
+const pageTitle = "Contact SignSmith | Get Your Free Quote";
+const pageDescription = "Ready for professional signs? Contact us for a free quote. We help small businesses and individuals — no design experience needed!";
+
 const contactInfo = [
   {
     icon: 'email',
     title: 'Email',
-    value: 'hello@luminadesign.studio',
-    link: 'mailto:hello@luminadesign.studio'
+    value: 'hello@signsmith.studio',
+    link: 'mailto:hello@signsmith.studio'
   },
   {
     icon: 'time',
@@ -36,8 +39,8 @@ const projectTypes = [
 ---
 
 <Layout 
-  title="Contact"
-  description="Get in touch with Lumina Design Studio for a free quote on your signage and print design project."
+  title={pageTitle}
+  description={pageDescription}
 >
   <Navigation />
   
