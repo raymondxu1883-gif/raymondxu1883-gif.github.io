@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "SignSmith Blog | Small Business Signage Tips & Ideas";
+const pageDescription = "Get expert tips on signage design, branding advice for small businesses, and creative ideas to make your business stand out.";
+
+const posts = [
+  {
+    title: "5 Essential Signs Every Small Retail Store Needs",
+    excerpt: "Discover the must-have signage that will help your small shop attract customers, build brand recognition, and increase sales.",
+    date: "April 23, 2026",
+    category: "Small Business Tips",
+    slug: "essential-signs-small-retail-store",
+    image: "/images/work-signage.jpg"
+  },
+  {
+    title: "How to Choose the Right Sign Material for Your Business",
+    excerpt: "From acrylic to metal to PVC, learn which signage material works best for different environments and budgets.",
+    date: "April 25, 2026",
+    category: "Design Guide",
+    slug: "choose-right-sign-material",
+    image: "/images/work-branding.jpg"
+  },
+  {
+    title: "Wedding Signage Trends for 2026",
+    excerpt: "Make your special day unforgettable with these beautiful and creative wedding sign ideas that guests will love.",
+    date: "April 28, 2026",
+    category: "Events",
+    slug: "wedding-signage-trends-2026",
+    image: "/images/work-wedding.jpg"
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+>
+  <Navigation />
+  
+  <main class="pt-24">
+    <!-- Header -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-6 text-center">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">Resources</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">
+          SignSmith Blog
+        </h1>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Expert tips, design inspiration, and practical advice for small businesses looking to make their mark.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="section bg-white">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+            <img 
+              src="/images/work-signage.jpg" 
+              alt="Small business storefront signage"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-orange-500 font-semibold text-sm uppercase tracking-wider">Featured</span>
+              <span class="text-gray-400">•</span>
+              <span class="text-gray-500 text-sm">April 23, 2026</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              5 Essential Signs Every Small Retail Store Needs
+            </h2>
+            <p class="text-gray-600 text-lg mb-6">
+              Discover the must-have signage that will help your small shop attract customers, build brand recognition, and increase sales. From storefront signs to wayfinding, we've got you covered.
+            </p>
+            <a href="/blog/essential-signs-small-retail-store.html" class="btn btn-primary">
+              Read Article
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="section bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Latest Articles</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map(post => (
+            <article class="card group overflow-hidden">
+              <div class="aspect-[16/10] overflow-hidden">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-orange-500 text-sm font-medium">{post.category}</span>
+                  <span class="text-gray-300">•</span>
+                  <span class="text-gray-500 text-sm">{post.date}</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-500 transition-colors">
+                  <a href={`/blog/${post.slug}.html`}>{post.title}</a>
+                </h3>
+                <p class="text-gray-600 mb-4">{post.excerpt}</p>
+                <a href={`/blog/${post.slug}.html`} class="text-orange-500 font-medium inline-flex items-center group-hover:translate-x-2 transition-transform">
+                  Read More
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-orange-500">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          Ready to Create Your Perfect Sign?
+        </h2>
+        <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+          Get expert help bringing your vision to life. Free consultation and quote.
+        </p>
+        <a href="/contact.html" class="btn bg-white text-orange-500 hover:bg-gray-100 text-lg px-8">
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
