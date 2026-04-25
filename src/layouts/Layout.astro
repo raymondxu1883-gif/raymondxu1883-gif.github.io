@@ -32,21 +32,21 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   <meta name="author" content="SignSmith Studio" />
   
   <!-- Canonical URL -->
-  <link rel="canonical" href={`https://your-studio.github.io${canonicalURL}`} />
+  <link rel="canonical" href={`https://signsmithstudio.com${canonicalURL}`} />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={`https://your-studio.github.io${canonicalURL}`} />
+  <meta property="og:url" content={`https://signsmithstudio.com${canonicalURL}`} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={`https://your-studio.github.io${image}`} />
+  <meta property="og:image" content={`https://signsmithstudio.com${image}`} />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={`https://your-studio.github.io${canonicalURL}`} />
+  <meta property="twitter:url" content={`https://signsmithstudio.com${canonicalURL}`} />
   <meta property="twitter:title" content={fullTitle} />
   <meta property="twitter:description" content={description} />
-  <meta property="twitter:image" content={`https://your-studio.github.io${image}`} />
+  <meta property="twitter:image" content={`https://signsmithstudio.com${image}`} />
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -56,24 +56,102 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-    {{
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "SignSmith Studio",
-      "description": "Professional signage and print design services",
-      "url": "https://your-studio.github.io",
-      "image": "https://your-studio.github.io/images/logo.png",
-      "priceRange": "$$",
-      "serviceType": ["Signage Design", "Print Design", "Banner Design", "Custom Stickers"]
-    }}
-  </script>
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://signsmithstudio.com/#organization",
+    "name": "SignSmith Studio",
+    "alternateName": "Sign Smith Studio",
+    "url": "https://signsmithstudio.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://signsmithstudio.com/favicon.svg"
+    },
+    "image": "https://signsmithstudio.com/images/og-image.jpg",
+    "description": "Professional custom signage, wedding signs, and branded merchandise for small businesses and events.",
+    "slogan": "We Make the Mark",
+    "sameAs": [
+      "https://instagram.com/signsmithstudio",
+      "https://linkedin.com/company/signsmithstudio",
+      "https://behance.net/signsmithstudio",
+      "https://pinterest.com/signsmithstudio"
+    ]
+  })} />
+  
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://signsmithstudio.com/#localbusiness",
+    "name": "SignSmith Studio",
+    "description": "Professional signage and print design services for businesses, events, and personal projects.",
+    "url": "https://signsmithstudio.com",
+    "telephone": "+1-XXX-XXX-XXXX",
+    "email": "hello@signsmithstudio.com",
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "serviceType": [
+      "Custom Banners",
+      "Yard Signs & Decals",
+      "Advertising Flags",
+      "Trade Show Displays",
+      "Marketing Materials",
+      "Wedding & Event Signs"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Signage Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Signage Design"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wedding & Event Signage"
+          }
+        }
+      ]
+    }
+  })} />
+  
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://signsmithstudio.com/#website",
+    "url": "https://signsmithstudio.com",
+    "name": "SignSmith Studio",
+    "description": "Professional custom signage, wedding signs, and branded merchandise.",
+    "publisher": {
+      "@id": "https://signsmithstudio.com/#organization"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://signsmithstudio.com/blog?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  })} />
   
   <style>
     /* Critical CSS for above-the-fold content */
     body { margin: 0; }
   </style>
+  
+  <!-- Additional head content from pages -->
+  <slot name="head" />
 </head>
 <body>
   <slot />

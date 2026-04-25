@@ -11,6 +11,35 @@ const pageDescription = "Discover the must-have signage for your small shop: sto
   title={pageTitle}
   description={pageDescription}
 >
+  <!-- BlogPosting Structured Data -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "5 Essential Signs Every Small Retail Store Needs",
+      "description": "Discover the must-have signage for your small shop: storefront signs, window graphics, wayfinding, promotional displays, and hours signs.",
+      "image": "https://signsmithstudio.com/images/work-signage.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "SignSmith Studio",
+        "url": "https://signsmithstudio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SignSmith Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://signsmithstudio.com/favicon.svg"
+        }
+      },
+      "datePublished": "2026-04-23",
+      "dateModified": "2026-04-23",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://signsmithstudio.com/blog/essential-signs-small-retail-store"
+      }
+    }
+  </script>
   <Navigation />
   
   <main class="pt-24">

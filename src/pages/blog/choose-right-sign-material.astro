@@ -5,12 +5,44 @@ import Footer from '../../components/Footer.astro';
 
 const pageTitle = "How to Choose the Right Sign Material | SignSmith Studio";
 const pageDescription = "Acrylic, metal, PVC, or wood? Learn which signage material works best for your business needs, budget, and environment. Complete comparison guide.";
+const pubDate = "2026-04-23";
+const author = "SignSmith Studio";
+const articleImage = "/images/work-branding.jpg";
 ---
 
 <Layout 
   title={pageTitle}
   description={pageDescription}
 >
+  <!-- BlogPosting Structured Data -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How to Choose the Right Sign Material for Your Business",
+      "description": "Acrylic, metal, PVC, or wood? Learn which signage material works best for your business needs, budget, and environment.",
+      "image": "https://signsmithstudio.com/images/work-branding.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "SignSmith Studio",
+        "url": "https://signsmithstudio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SignSmith Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://signsmithstudio.com/favicon.svg"
+        }
+      },
+      "datePublished": "2026-04-23",
+      "dateModified": "2026-04-23",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://signsmithstudio.com/blog/choose-right-sign-material"
+      }
+    }
+  </script>
   <Navigation />
   
   <main class="pt-24">
